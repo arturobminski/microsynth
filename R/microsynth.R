@@ -826,10 +826,10 @@ microsynth <- function (data, idvar, intvar, timevar = NULL, start.pre = NULL,
   dum <- min(NROW(Intervention) - dum, dum)
   dum1 <- ((max(end.post) - (max(end.post) - end.pre)%%period -
               end.pre)/period)
-  print(paste("Diagnosis dum:", dum, sep = " ")) #DIAGNOSIS
-  print(paste("Diagnosis colSums(Intervention == 1):", colSums(Intervention == 1), sep = " ")) #DIAGNOSIS
-  print(paste("Diagnosis NROW(Intervention):", NROW(Intervention), sep = " ")) #DIAGNOSIS
-  print(paste("Diagnosis dum1:", dum1, sep = " ")) #DIAGNOSIS
+  message("Diagnosis dum:", paste(dum), sep = " ") #DIAGNOSIS
+  message("Diagnosis colSums(Intervention == 1):", paste(colSums(Intervention == 1)), sep = " ") #DIAGNOSIS
+  message("Diagnosis NROW(Intervention):", paste(NROW(Intervention)), sep = " ") #DIAGNOSIS
+  message("Diagnosis dum1:", paste(dum1), sep = " ") #DIAGNOSIS
   if (dum <= dum1 + 1) {
     if(printFlag){message("WARNING: There is a low number (", dum, ") of cases in the treatment or intervention group.\n",
                           sep = "", appendLF = FALSE)}
